@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <img src="./1.jpg" alt="" width="200" height="400" id="imdName" />
+      <p>
+        wlecome <span id="class-name">Nour</span> you have visited this site
+        <span id="times">3</span>
+      </p>
+    </div>
+    <script>
+      var myDate = new Date();
+      myDate.setDate(myDate.getDate() + 3);
+      var imgName = document.querySelector("#imdName");
+      var userName = document.getElementById("class-name");
+      var times = document.getElementById("times");
+      let counter = 1;
+
+      function getCookie(cookieName) {
+        var cookieIndex = document.cookie?.split(";");
+
+        var newCookie;
+        cookieIndex.forEach((element) => {
+          if (element.trim().startsWith(cookieName + "="))
+            newCookie = element.trim();
+        });
+
+        if (cookieIndex !== undefined && newCookie !== undefined) {
+          return newCookie.substring(cookieName.length + 1);
+        }
+        return "";
+      }
+      function setCookie(key, value) {
+        document.cookie = key + "=" + value + ";expires=" + myDate;
+      }
+
+      window.addEventListener("load", function () {
+        counter = Number(getCookie("time"));
+
+        counter += 1;
+
+        setCookie("time", counter);
+      });
+
+      userName.innerHTML = `${getCookie("name")}`;
+      times.innerHTML = `${Number(getCookie("time"))}`;
+
+      userName.style.color = getCookie("color");
+      times.style.color = getCookie("color");
+
+      if (getCookie("gender") === "male")
+        imgName.setAttribute("src", "./1.jpg");
+      else imgName.setAttribute("src", "./2.jpg");
+    </script>
+  </body>
+</html>

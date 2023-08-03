@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <label for="age">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+
+      <div>
+        <label for="name">Age</label>
+        <input type="text" name="name" id="age" />
+      </div>
+
+      <p>Select your Gender</p>
+      <div class="image-container">
+        <div>
+          <img src="./1.jpg" alt="" />
+          <input type="radio" name="gender" id="male" value="male" />
+        </div>
+        <div>
+          <img src="./2.jpg" alt="" />
+          <input type="radio" name="gender" id="female" value="female" />
+        </div>
+      </div>
+    </div>
+
+    <label for="color">Select your Color</label>
+    <select name="color" id="colors">
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="blue">Blue</option>
+    </select>
+
+    <button id="btn">register</button>
+    <script src="./script.js"></script>
+  </body>
+</html>
