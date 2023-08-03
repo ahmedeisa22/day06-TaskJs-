@@ -6,9 +6,6 @@ var radioButton = document.querySelectorAll('input[type="radio"]');
 var btn = document.getElementById("btn");
 var selectedRadioButton;
 
-/************************************************** */
-//   second page
-/*************************************************** */
 
 function checkGender() {
   for (let i = 0; i < radioButton.length; i++) {
